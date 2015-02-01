@@ -13,7 +13,7 @@ find_package(OpenCV2 REQUIRED)
 IF(OpenCV2_FOUND)
   MESSAGE("-- Found OpenCV2")
 ELSE()
-  MESSAGE("[Error] OpenCV2 is required. Please Edit CMakeLists.txt at line ")
+  MESSAGE(SEND_ERROR "[Error] Failed to find \"OpenCV2\" automatically. If \"OpenCV2\" is correctly installed but this message is shown, please manually edit CMakeLists.txt at this line")
 # If FindOpenCV.cmake does not work, please manually set following variables
 #
 #  set(OpenCV2_FOUND 1)
@@ -28,7 +28,7 @@ find_package(MATLAB REQUIRED)
 IF(MATLAB_FOUND)
   MESSAGE("-- Found Matlab")
 ELSE()
-  MESSAGE("[Error] Matlab is required. Please Edit CMakeLists.txt at line ")
+  MESSAGE(SEND_ERROR "[Error] Failed to find \"Matlab\" automatically. If \"Matlab\" is correctly installed but this message is shown, please manually edit CMakeLists.txt at this line")
 # If FindMATLAB.cmake does not work, please manually set following variables
 #
 #  set(MATLAB_INCLUDE_DIR "") #include path for mex.h, engine.h
