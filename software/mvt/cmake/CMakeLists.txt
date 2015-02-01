@@ -54,7 +54,7 @@ find_package(Boost 1.36.0 COMPONENTS program_options REQUIRED)
 # Find MxArray
 set(MXARRAY_FOUND OFF)
 IF(NOT MXARRAY_FOUND)
-MESSAGE("Please download from https://github.com/kyamagu/mexopencv and set variables below")
+    MESSAGE(SEND_ERROR "[Error] Failed to find \"MxArray\" automatically (Git URL: https://github.com/kyamagu/mexopencv). If \"MxArray\" is correctly installed but this message is shown, please manually edit CMakeLists.txt at this line")
 set(MXARRAY_FOUND ON)
 set(MXARRAY_LIBRARIES "$ENV{HOME}/lib/matlab_toolbox/mexopencv-master/lib")
 set(MXARRAY_INCLUDE_DIRS "$ENV{HOME}/lib/matlab_toolbox/mexopencv-master/include")
@@ -73,7 +73,7 @@ include_directories(include)
 ####################################################################
 # Sources
 #add_library(mvt_cuda src/select_gpu.cu src/matrix.cu src/rectify.cu src/hog.cu src/convolve.cu svm_common.c src/svm_struct_api.c src/svm_struct_common.c src/cad.c src/tree.c src/distance_transform.c)
-add_executable(mvt src/main.cpp)
+add_executable(mvt ../src/main.cpp)
 
 ####################################################################
 # Libraries
