@@ -52,15 +52,8 @@ find_package(OpenMP REQUIRED)
 find_package(Boost 1.36.0 COMPONENTS program_options REQUIRED)
 
 # Find MxArray
-set(MXARRAY_FOUND OFF)
-IF(NOT MXARRAY_FOUND)
-    MESSAGE(SEND_ERROR "[Error] Failed to find \"MxArray\" automatically (Git URL: https://github.com/kyamagu/mexopencv). If \"MxArray\" is correctly installed but this message is shown, please manually edit CMakeLists.txt at this line")
-set(MXARRAY_FOUND ON)
-set(MXARRAY_LIBRARIES "$ENV{HOME}/lib/matlab_toolbox/mexopencv-master/lib")
-set(MXARRAY_INCLUDE_DIRS "$ENV{HOME}/lib/matlab_toolbox/mexopencv-master/include")
-ENDIF()
-MESSAGE("include: ${MXARRAY_INCLUDE_DIRS}")
-include_directories(${MXARRAY_INCLUDE_DIRS})
+find_package(MEXOPENCV REQUIRED)
+include_directories(${MEXOPENCV_INCLUDE_DIRS})
 
 ####################################################################
 # Compile flags
