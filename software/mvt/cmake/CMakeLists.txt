@@ -4,7 +4,7 @@ project (Monocular_Multiview_Object_Tracker)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 ####################################################################
-# Required Packages OpenCV2, Matlab, CUDA, Boost
+# Required Packages OpenCV2, Matlab, CUDA, Boost, mexopencv
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
 
@@ -21,7 +21,7 @@ ELSE()
 #  set(OpenCV2_LIBRARIES "")
 #
 ENDIF()
-include_directories(${OpenCV2_INCLUDE_DIRS})
+include_directories(${OpenCV2_ROOT_DIR}/include ${OpenCV2_INCLUDE_DIRS})
 
 # Find MATLAB
 find_package(MATLAB REQUIRED)
@@ -61,12 +61,16 @@ include_directories(${MEXOPENCV_INCLUDE_DIRS})
 
 ####################################################################
 # Includes
-include_directories(include)
+include_directories(../include)
+
+include_directories($ENV{CPLUS_INCLUDE_PATH} $ENV{C_INCLUDE_PATH})
 
 ####################################################################
 # Sources
 #add_library(mvt_cuda src/select_gpu.cu src/matrix.cu src/rectify.cu src/hog.cu src/convolve.cu svm_common.c src/svm_struct_api.c src/svm_struct_common.c src/cad.c src/tree.c src/distance_transform.c)
 add_executable(mvt ../src/main.cpp)
+
+MESSAGE("include: ${CPLUS_INCLUDE_PATH}")
 
 ####################################################################
 # Libraries
