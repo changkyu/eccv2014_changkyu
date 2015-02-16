@@ -5,7 +5,7 @@ namespace po = boost::program_options;
 
 MVT_Param g_param;
 
-MVT_Param ParseArguments(int argc, const char **argv)
+MVT_Param ParseArguments(int argc, char **argv)
 {
 	po::options_description desc("\nAvailable Options for 'Multiview Tracker'\n");
 

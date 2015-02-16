@@ -8,7 +8,7 @@ std::ofstream f_log;
 bool g_b_initializing;
 //void test_dpm(MVT_Image mvt_image);
 
-int main( int argc, const char** argv )
+int main( int argc, char** argv )
 {
 cout.precision(5);
 

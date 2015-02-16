@@ -54,7 +54,7 @@
 #define MVT_PARAM__WEIGHT_MIL_ROOT    ("weight_mil_root")
 #define MVT_PARAM__HEIGHT_MIL_ROOT     ("height_mil_root")
 
-MVT_Param ParseArguments(int argc, const char **argv);
+MVT_Param ParseArguments(int argc, char **argv);
 void PrintArguments();
 
 extern MVT_Param g_param;
