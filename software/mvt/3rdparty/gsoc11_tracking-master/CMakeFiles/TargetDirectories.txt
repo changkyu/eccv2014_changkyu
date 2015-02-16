@@ -1,2 +1,0 @@
-/z/changkyu/projects/iccv2013_changkyu/src/c/mvt/3rdparty/gsoc11_tracking-master/CMakeFiles/ObjectTrackingApp.dir
-/z/changkyu/projects/iccv2013_changkyu/src/c/mvt/3rdparty/gsoc11_tracking-master/CMakeFiles/libObjectTracking.dir

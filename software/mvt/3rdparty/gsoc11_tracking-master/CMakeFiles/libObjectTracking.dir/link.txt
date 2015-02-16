@@ -1,2 +1,0 @@
-/usr/bin/ar cr liblibObjectTracking.a  CMakeFiles/libObjectTracking.dir/src/cv_onlineboosting.cpp.o CMakeFiles/libObjectTracking.dir/src/cv_onlinemil.cpp.o CMakeFiles/libObjectTracking.dir/src/object_tracker.cpp.o
-/usr/bin/ranlib liblibObjectTracking.a
